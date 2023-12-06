@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
 h1, h2{
     text-align: center;
 }
@@ -11,6 +12,17 @@ nav{
     margin-bottom: 5px;
     margin-left: 5px;
     margin-right: 5px;
+}
+div > h2{
+    font-family: 'Mountains of Christmas', serif;
+}
+a > img{
+    max-height: 25px;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 div{
     border: 2px solid red;
