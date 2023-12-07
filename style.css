@@ -24,7 +24,7 @@ a > img{
     margin-top: 2px;
     margin-bottom: 2px;
 }
-div{
+.top-div{
     border: 2px solid red;
     border-radius: 5px;
     margin-top: 5px;
@@ -32,6 +32,9 @@ div{
     margin-left: 5px;
     margin-right: 5px;
     background-image: url(./snow_winter_trees.jpg);
+}
+.vänster{
+    display: none;
 }
 article{
     border: 2px solid red;
@@ -59,4 +62,91 @@ footer{
     margin-bottom: 5px;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+/*Tablett layout om bredden är mellan 641 och 1007 pixlar.*/
+@media screen and (min-width: 641px) and (max-width: 1007px){
+    body{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr 3fr 5fr 0.5fr;
+    }
+    header{
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+    div{
+        grid-column: 1/3;
+        grid-row: 2/3;
+        background-size: cover;
+    }
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    main{
+        grid-column: 1/3;
+        grid-row: 3/4;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    main > article{
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    main > .vänster{
+        width: 225px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid red;
+        border-radius: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        padding: 5px;
+        gap: 15px;
+    }
+    .vänster > img{
+        max-height: 20px;
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+    footer{
+        grid-column: 1/3;
+        grid-row: 4/5;
+    }
+}
+
+/*Dator layout om bredden är över 1007 pixlar.*/
+@media screen and (min-width: 1008px){
+    body{
+        display: grid;
+        grid-template-columns: 1fr 7fr 1fr;
+        grid-template-rows: 1fr 3fr 5fr 0.5fr;
+    }
+    header{
+        grid-column: 1/4;
+        grid-row: 1/2;
+    }
+    div{
+        grid-column: 1/4;
+        grid-row: 2/3;
+        background-size: cover;
+    }
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    main{
+        grid-column: 2/4;
+        grid-row: 3/4;
+    }
+    footer{
+        grid-column: 1/4;
+        grid-row: 4/5;
+    }
 }
